@@ -1,4 +1,4 @@
-#include "Measurement.h"
+#include "Measurement.hpp"
 
 Measurement::Measurement(const std::string& sensorId, float value, const std::string& timestamp)
 	: m_sensorId(sensorId), m_value(value), m_timestamp(timestamp)

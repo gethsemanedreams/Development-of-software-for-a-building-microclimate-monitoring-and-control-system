@@ -1,4 +1,4 @@
-#include "Sensor.h"
+#include "Sensor.hpp"
 #include <iostream>
 
 Sensor::Sensor() : m_id("0"), m_name("Unknown"), m_unit("-"), m_lastValue(0.0f), m_status("OK") {}

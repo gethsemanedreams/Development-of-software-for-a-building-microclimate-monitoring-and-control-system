@@ -134,14 +134,17 @@
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Alert.h" />
-    <ClInclude Include="Logger.h" />
-    <ClInclude Include="Measurement.h" />
-    <ClInclude Include="MonitoringSystem.h" />
-    <ClInclude Include="Room.h" />
-    <ClInclude Include="Sensor.h" />
-    <ClInclude Include="TemperatureSensor.h" />
-    <ClInclude Include="User.h" />
+    <ClInclude Include="Alert.hpp" />
+    <ClInclude Include="Logger.hpp" />
+    <ClInclude Include="Measurement.hpp" />
+    <ClInclude Include="MonitoringSystem.hpp" />
+    <ClInclude Include="Room.hpp" />
+    <ClInclude Include="Sensor.hpp" />
+    <ClInclude Include="TemperatureSensor.hpp" />
+    <ClInclude Include="User.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

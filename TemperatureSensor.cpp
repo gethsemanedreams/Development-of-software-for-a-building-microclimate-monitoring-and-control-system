@@ -1,4 +1,4 @@
-#include "TemperatureSensor.h"
+#include "TemperatureSensor.hpp"
 #include <iostream>
 #include <cstdlib>
 

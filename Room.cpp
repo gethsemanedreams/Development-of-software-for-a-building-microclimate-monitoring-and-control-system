@@ -1,4 +1,4 @@
-#include "Room.h"
+#include "Room.hpp"
 #include <iostream>
 
 Room::Room(const std::string& name) : m_name(name) {}

@@ -1,4 +1,4 @@
-#include "MonitoringSystem.h"
+#include "MonitoringSystem.hpp"
 #include <iostream>
 
 MonitoringSystem::MonitoringSystem() = default;

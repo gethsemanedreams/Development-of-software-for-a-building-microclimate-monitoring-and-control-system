@@ -1,8 +1,8 @@
-﻿#include "MonitoringSystem.h"
-#include "TemperatureSensor.h"
-#include "Alert.h"
-#include "User.h"
-#include "Measurement.h"
+﻿#include "MonitoringSystem.hpp"
+#include "TemperatureSensor.hpp"
+#include "Alert.hpp"
+#include "User.hpp"
+#include "Measurement.hpp"
 #include <iostream>
 
 //

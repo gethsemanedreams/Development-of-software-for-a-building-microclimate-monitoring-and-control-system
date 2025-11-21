@@ -1,4 +1,4 @@
-#include "User.h"
+#include "User.hpp"
 
 User::User(const std::string& id, const std::string& name, const std::string& contact)
 	: m_id(id), m_name(name), m_contactInfo(contact)

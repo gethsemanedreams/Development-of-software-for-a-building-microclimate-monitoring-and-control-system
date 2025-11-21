@@ -1,4 +1,4 @@
-#include "Alert.h"
+#include "Alert.hpp"
 
 Alert::Alert(const std::string& id, const std::string& sensorId,
     const std::string& message, const std::string& severity,
