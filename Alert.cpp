@@ -1,32 +1,49 @@
-#include "Alert.hpp"
+﻿#include "Alert.hpp"
 
-Alert::Alert(const std::string& id, const std::string& sensorId,
-    const std::string& message, const std::string& severity,
-    const std::string& timestamp)
-    : m_id(id), m_sensorId(sensorId), m_message(message),
-    m_severity(severity), m_timestamp(timestamp)
+// Конструктор
+Alert::Alert(const std::string& id,
+    const std::string& sensorId,
+    const std::string& message,
+    Severity severity)
+    : m_id(id),
+    m_sensorId(sensorId),
+    m_message(message),
+    m_severity(severity)
 {
     std::cout << "Alert created: " << m_message << std::endl;
 }
 
+// Деструктор
 Alert::~Alert()
 {
     std::cout << "Alert destroyed: " << m_id << std::endl;
 }
 
-void Alert::SendSoundNotification()
-{
-    std::cout << "[SOUND ALERT] Sensor " << m_sensorId
-        << " triggered: " << m_message << std::endl;
-}
-
+// Уведомление текстом
 void Alert::SendTextNotification() const
 {
-    std::cout << "[TEXT ALERT] " << m_message
-        << " | Level: " << m_severity << std::endl;
+    std::cout << "[TEXT ALERT] "
+        << m_message
+        << " | Level: "
+        << SeverityToString(m_severity)
+        << std::endl;
 }
 
-void Alert::Acknowledge()
+// Уведомление звуком
+void Alert::SendSoundNotification() const
 {
-    std::cout << "Alert " << m_id << " acknowledged by user." << std::endl;
+    std::cout << "[SOUND ALERT] *beep* "
+        << m_message << std::endl;
+}
+
+// Преобразование enum → строка
+std::string Alert::SeverityToString(Severity severity)
+{
+    switch (severity)
+    {
+    case Severity::INFO:     return "INFO";
+    case Severity::WARNING:  return "WARNING";
+    case Severity::CRITICAL: return "CRITICAL";
+    }
+    return "UNKNOWN";
 }

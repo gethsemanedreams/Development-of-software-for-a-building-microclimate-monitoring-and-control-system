@@ -1,66 +1,42 @@
 #include "Logger.hpp"
+#include <iostream>
+#include <fstream>
 
-//
-// Определение статического поля класса.
-// Оно существует в единственном экземпляре для всех объектов Logger.
-//
-const std::string Logger::DEFAULT_NAME = "log.txt";
-
-//
-// Конструктор по умолчанию.
-// Устанавливает имя файла равным значению по умолчанию.
-//
-Logger::Logger()
-    : m_fileName(DEFAULT_NAME)
+// Реализация Singleton
+Logger& Logger::GetInstance()
 {
+    static Logger instance;
+    return instance;
 }
 
-//
-// Конструктор, позволяющий задать имя файла вручную.
-//
-Logger::Logger(const std::string& fileName)
-    : m_fileName(fileName)
+void Logger::Log(const std::string& message)
 {
+    m_log.push_back(message);
 }
 
-//
-// Деструктор.
-// Вызывается автоматически при уничтожении объекта.
-// Закрывает файл, если он был открыт.
-//
-Logger::~Logger()
+void Logger::PrintLog() const
 {
-    Close();
+    std::cout << "---- LOG BEGIN ----\n";
+    for (const auto& entry : m_log)
+    {
+        std::cout << entry << std::endl;
+    }
+    std::cout << "---- LOG END ----\n";
 }
 
-//
-// Метод Open()
-// Открывает файл в режиме добавления (std::ios::app).
-// Это позволяет не перезаписывать существующий журнал.
-//
-void Logger::Open()
+void Logger::SaveToFile(const std::string& filename) const
 {
-    m_stream.open(m_fileName, std::ios::app);
-}
+    std::ofstream file(filename);
+    if (!file.is_open())
+    {
+        std::cout << "Error: cannot open log file!\n";
+        return;
+    }
 
-//
-// Метод Write()
-// Записывает строку в файл, если файл открыт.
-// Каждая запись завершается переводом строки.
-//
-void Logger::Write(const std::string& message)
-{
-    if (m_stream.is_open())
-        m_stream << message << std::endl;
-}
+    for (const auto& entry : m_log)
+    {
+        file << entry << "\n";
+    }
 
-//
-// Метод Close()
-// Закрывает поток файла, если он открыт.
-// Это освобождает ресурс и предотвращает утечки.
-//
-void Logger::Close()
-{
-    if (m_stream.is_open())
-        m_stream.close();
+    file.close();
 }

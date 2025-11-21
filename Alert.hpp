@@ -2,32 +2,36 @@
 #include <string>
 #include <iostream>
 
-//
-// Класс Alert описывает предупреждение,
-// возникающее при превышении пороговых значений датчиков.
-// Хранит информацию о типе, уровне и времени события.
-//
+// Перечисление уровня серьёзности уведомления
+enum class Severity
+{
+    INFO,       // Информационное сообщение
+    WARNING,    // Предупреждение
+    CRITICAL    // Критическая ошибка
+};
+
 class Alert
 {
-private:
-    std::string m_id;         // Уникальный идентификатор предупреждения
-    std::string m_sensorId;   // ID датчика, вызвавшего тревогу
-    std::string m_message;    // Текст сообщения
-    std::string m_severity;   // Уровень критичности (LOW / HIGH / CRITICAL)
-    std::string m_timestamp;  // Время возникновения (строкой для простоты)
-
 public:
-    Alert(const std::string& id, const std::string& sensorId,
-        const std::string& message, const std::string& severity,
-        const std::string& timestamp);
+    // Конструктор
+    Alert(const std::string& id,
+        const std::string& sensorId,
+        const std::string& message,
+        Severity severity);
+
+    // Деструктор
     ~Alert();
 
-    // Отправляет звуковое оповещение пользователю.
-    void SendSoundNotification();
-
-    // Отправляет текстовое уведомление.
+    // Методы уведомления
     void SendTextNotification() const;
+    void SendSoundNotification() const;
 
-    // Подтверждение получения уведомления.
-    void Acknowledge();
+    // Преобразование уровня важности в строку
+    static std::string SeverityToString(Severity severity);
+
+private:
+    std::string m_id;        // ID уведомления
+    std::string m_sensorId;  // ID сенсора, вызвавшего тревогу
+    std::string m_message;   // Текст сообщения
+    Severity m_severity;     // Уровень серьёзности (enum class)
 };

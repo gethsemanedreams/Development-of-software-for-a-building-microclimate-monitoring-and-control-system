@@ -21,4 +21,6 @@ public:
 
 	// Проверяет все датчики (считывает и выводит значения).
 	void CheckAllSensors();
+
+	std::string GetName() const;
 };

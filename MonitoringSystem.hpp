@@ -11,7 +11,6 @@ class MonitoringSystem
 {
 private:
 	std::vector<Room*> m_rooms; // —писок помещений под наблюдением
-	Logger m_logger;           // —сылка на общий логгер (Singleton)
 
 public:
 	MonitoringSystem();

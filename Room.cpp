@@ -24,3 +24,8 @@ void Room::CheckAllSensors()
 		s->CheckStatus();
 	}
 }
+
+std::string Room::GetName() const
+{
+	return m_name;
+}
