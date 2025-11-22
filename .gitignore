@@ -1,0 +1,60 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.cache
+*.pdb
+*.ipch
+*.VC.db
+
+# Build folders
+bin/
+Bin/
+BIN/
+build/
+Build/
+BUILD/
+Debug/
+Release/
+x64/
+x86/
+
+# C++ object files
+*.obj
+*.o
+*.lo
+*.slo
+
+# Compiled binaries
+*.exe
+*.dll
+*.lib
+*.a
+*.so
+*.out
+
+# Logs
+*.log
+
+# Visual Studio generated files
+*.vcxproj.user
+*.vcxproj.filters
+*.opensdf
+*.sdf
+
+# Backup / temp files
+*.tmp
+*.temp
+*.bak
+*.old
+*.orig
+
+# CMake build cache (если используешь)
+CMakeFiles/
+CMakeCache.txt
+cmake-build-*/
+
+# Other unwanted files
+*.zip
+*.7z
+*.rar
