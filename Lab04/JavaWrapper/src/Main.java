@@ -5,9 +5,17 @@ import java.io.InputStreamReader;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        // Относительный путь к собранному C#-exe относительно папки JavaWrapper.
-        // Перед запуском Java-кода нужно выполнить dotnet publish для проекта MonitoringSystem.Cli.
-        String exePath = "E:\\ДЗ\\Программирование\\Sem_3\\Lab_04\\Lab04\\MonitoringSystem.Cli\\bin\\Release\\net8.0\\MonitoringSystem.Cli.exe";
+        // Определяем ОС
+        String os = System.getProperty("os.name").toLowerCase();
+
+        String exePath;
+        if (os.contains("win")) {
+            // Путь для Windows
+            exePath = "E:\\ДЗ\\Программирование\\Sem_3\\Lab_04\\Lab04\\MonitoringSystem.Cli\\bin\\Release\\net8.0\\MonitoringSystem.Cli.exe";
+        } else {
+            // Путь для Linux относительно папки JavaWrapper
+            exePath = "../MonitoringSystem.Cli/bin/Release/net8.0/linux-x64/publish/MonitoringSystem.Cli";
+        }
 
         ProcessBuilder pb = new ProcessBuilder(exePath);
         pb.redirectErrorStream(true);
@@ -27,3 +35,4 @@ public class Main {
         System.out.println("=== C# завершился с кодом " + exitCode + " ===");
     }
 }
+
