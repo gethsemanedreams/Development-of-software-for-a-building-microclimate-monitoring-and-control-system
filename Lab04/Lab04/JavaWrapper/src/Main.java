@@ -10,7 +10,7 @@ public class Main {
 
         String exePath;
         if (os.contains("win")) {
-            // Путь для Windows
+            // Путь для Windows 
             exePath = "E:\\ДЗ\\Программирование\\Sem_3\\Lab_04\\Lab04\\MonitoringSystem.Cli\\bin\\Release\\net8.0\\MonitoringSystem.Cli.exe";
         } else {
             // Путь для Linux относительно папки JavaWrapper
@@ -35,4 +35,3 @@ public class Main {
         System.out.println("=== C# завершился с кодом " + exitCode + " ===");
     }
 }
-

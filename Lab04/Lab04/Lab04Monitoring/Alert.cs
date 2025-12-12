@@ -1,4 +1,5 @@
 // Класс Alert описывает одно оповещение для пользователя.
+// Здесь мы используем enum Severity и свойства вместо публичных полей.
 using System;
 
 namespace Lab04Monitoring
@@ -17,6 +18,7 @@ namespace Lab04Monitoring
         // Уровень серьёзности.
         public Severity Severity { get; }
 
+        // Конструктор обычный.
         public Alert(string id, string sensorId, string message, Severity severity)
         {
             Id = id;
@@ -28,32 +30,19 @@ namespace Lab04Monitoring
         // Текстовое оповещение в консоль.
         public void SendTextNotification()
         {
-            Console.WriteLine($"[ALERT {Id}] ({SeverityToString(Severity)}) from sensor {SensorId}: {Message}");
+            Console.WriteLine($"[ALERT {Id}] ({Severity}) from sensor {SensorId}: {Message}");
         }
 
-        // "Звуковое" оповещение (подаём сигнал Beep, если возможно).
+        // "Звуковое" оповещение для демонстрации.
         public void SendSoundNotification()
         {
-            try
-            {
-                Console.Beep();
-            }
-            catch
-            {
-                // Beep может не поддерживаться (виртуалка, удалённая консоль).
-            }
+            Console.WriteLine("[SOUND ALERT] *beep* " + Message);
         }
 
-        // Преобразование enum в строку.
-        public static string SeverityToString(Severity severity)
+        // Переопределяем ToString, чтобы удобно использовать Alert в логах.
+        public override string ToString()
         {
-            return severity switch
-            {
-                Severity.Info => "INFO",
-                Severity.Warning => "WARNING",
-                Severity.Critical => "CRITICAL",
-                _ => "UNKNOWN"
-            };
+            return $"Alert(Id={Id}, Sensor={SensorId}, Severity={Severity}, Message=\"{Message}\")";
         }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\ДЗ\\Программирование\\Sem_3\\Lab_04\\Lab04\\Lab04Monitoring\\Lab04Monitoring.csproj": {}
+    "E:\\ДЗ\\Программирование\\Sem_3\\Lab_05\\Lab05Cs_final\\Lab_04\\Lab04\\Lab04Monitoring\\Lab04Monitoring.csproj": {}
   },
   "projects": {
-    "E:\\ДЗ\\Программирование\\Sem_3\\Lab_04\\Lab04\\Lab04Monitoring\\Lab04Monitoring.csproj": {
+    "E:\\ДЗ\\Программирование\\Sem_3\\Lab_05\\Lab05Cs_final\\Lab_04\\Lab04\\Lab04Monitoring\\Lab04Monitoring.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ДЗ\\Программирование\\Sem_3\\Lab_04\\Lab04\\Lab04Monitoring\\Lab04Monitoring.csproj",
+        "projectUniqueName": "E:\\ДЗ\\Программирование\\Sem_3\\Lab_05\\Lab05Cs_final\\Lab_04\\Lab04\\Lab04Monitoring\\Lab04Monitoring.csproj",
         "projectName": "Lab04Monitoring",
-        "projectPath": "E:\\ДЗ\\Программирование\\Sem_3\\Lab_04\\Lab04\\Lab04Monitoring\\Lab04Monitoring.csproj",
+        "projectPath": "E:\\ДЗ\\Программирование\\Sem_3\\Lab_05\\Lab05Cs_final\\Lab_04\\Lab04\\Lab04Monitoring\\Lab04Monitoring.csproj",
         "packagesPath": "C:\\Users\\melen\\.nuget\\packages\\",
-        "outputPath": "E:\\ДЗ\\Программирование\\Sem_3\\Lab_04\\Lab04\\Lab04Monitoring\\obj\\",
+        "outputPath": "E:\\ДЗ\\Программирование\\Sem_3\\Lab_05\\Lab05Cs_final\\Lab_04\\Lab04\\Lab04Monitoring\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,4 +1,4 @@
-// Уровень серьёзности оповещения.
+// Перечисление уровней серьёзности оповещения.
 namespace Lab04Monitoring
 {
     public enum Severity
