@@ -1,0 +1,2 @@
+[15:50:22] Measurement from T1 in room 'Server room' = 39,30
+[15:50:22] ALERT for sensor T1 in room 'Server room'
